@@ -73,7 +73,7 @@ public class ListaEstatica {
         }
         String retorno = "" + info[0];
         for (int i = 1; i < tamanho; i++) {
-            retorno += ", " + info[i];
+            retorno += "," + info[i];
         }
         return retorno;
     }
