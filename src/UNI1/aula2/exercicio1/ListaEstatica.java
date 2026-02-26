@@ -1,24 +1,24 @@
-package UNI1.aula1.exercicio1;
+package UNI1.aula2.exercicio1;
 
-public class ListaEstatica {
+public class ListaEstatica<ClasseFornecida>{
 
-    private int[] info;
+    private Object[] info;
     private int tamanho;
 
     public ListaEstatica() {
-        info = new int[10];
+        info = new Object[10];
         tamanho = 0;
     }
 
     private void redimensionar() {
-        int[] novo = new int[(int) (info.length * 1.5)];
+        Object[] novo = new Object[(int) (info.length * 1.5)];
         for (int i = 0; i < tamanho; i++) {
             novo[i] = info[i];
         }
         info = novo;
     }
 
-    public void inserir(int valor) {
+    public void inserir(ClasseFornecida valor) {
         if (tamanho == info.length) {
             redimensionar();
         }
@@ -32,7 +32,7 @@ public class ListaEstatica {
         }
     }
 
-    public int buscar(int valor) {
+    public int buscar(ClasseFornecida valor) {
         for (int i = 0; i < tamanho; i++) {
             if (info[i] == valor) {
                 return i;
@@ -41,7 +41,7 @@ public class ListaEstatica {
         return -1;
     }
 
-    public void retirar(int valor) {
+    public void retirar(ClasseFornecida valor) {
         int pos = buscar(valor);
         if (pos == -1) {
             return;
@@ -57,7 +57,7 @@ public class ListaEstatica {
     }
 
     public void liberar() {
-        info = new int[10];
+        info = new Object[10];
         tamanho = 0;
     }
 
@@ -76,10 +76,10 @@ public class ListaEstatica {
         return retorno;
     }
 
-    public int obterElemento(int posicao) {
+    public ClasseFornecida obterElemento(int posicao) {
         if (posicao >= tamanho || posicao < 0) {
             throw new IndexOutOfBoundsException();
         }
-        return info[posicao];
+        return (ClasseFornecida) info[posicao];
     }
 }
