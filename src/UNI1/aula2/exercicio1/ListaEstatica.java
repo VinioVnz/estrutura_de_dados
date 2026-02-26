@@ -34,7 +34,7 @@ public class ListaEstatica<ClasseFornecida>{
 
     public int buscar(ClasseFornecida valor) {
         for (int i = 0; i < tamanho; i++) {
-            if (info[i] == valor) {
+            if (info[i].equals(valor)) {
                 return i;
             }
         }

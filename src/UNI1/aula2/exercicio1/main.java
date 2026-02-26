@@ -18,6 +18,11 @@ public class main {
             System.out.println("Aluno " + ((Aluno) umAluno).getNome());
         }
 
+
+        ListaEstatica frutas = new ListaEstatica<>();
+        frutas.inserir("manga");
+
+        frutas.buscar(System.in);
         
     }
 }
