@@ -1,13 +1,14 @@
-/* package UNI1.aula1.exercicio1;
+/* package UNI1.aula2.exercicio1;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ListaEstaticaTest {
 
     @Test
     void caso1_insercao_toString() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -18,7 +19,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso2_getTamanho() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -29,7 +30,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso3_buscar_existente() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -40,7 +41,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso4_buscar_inexistente() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -51,7 +52,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso5_retirar() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -65,7 +66,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso6_redimensionamento() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
 
         for (int i = 1; i <= 15; i++) {
             lista.inserir(i);
@@ -76,7 +77,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso7_obterElemento_valido() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -87,7 +88,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso8_obterElemento_invalido() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -100,7 +101,7 @@ public class ListaEstaticaTest {
 
     @Test
     void caso9_liberar() {
-        ListaEstatica lista = new ListaEstatica();
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
@@ -110,4 +111,32 @@ public class ListaEstaticaTest {
 
         assertTrue(lista.estaVazia());
     }
-} */
+
+    @Test
+    void caso10_inverter_par() {
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        lista.inverter();
+
+        assertEquals("20,15,10,5", lista.toString());
+    }
+
+    @Test
+    void caso11_inverter_impar() {
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+        lista.inserir(25);
+
+        lista.inverter();
+
+        assertEquals("25,20,15,10,5", lista.toString());
+    }
+}
+ */

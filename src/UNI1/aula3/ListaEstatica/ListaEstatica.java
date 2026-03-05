@@ -1,4 +1,4 @@
-package UNI1.aula2.exercicio1;
+package UNI1.aula3.ListaEstatica;
 
 public class ListaEstatica<ClasseFornecida>{
 
