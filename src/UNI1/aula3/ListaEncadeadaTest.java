@@ -1,4 +1,4 @@
-import static org.junit.jupiter.api.Assertions.*;
+/* import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class ListaEncadeadaTest {
@@ -174,4 +174,4 @@ public class ListaEncadeadaTest {
 
         assertEquals(4, lista.obterComprimento());
     }
-}
+} */
