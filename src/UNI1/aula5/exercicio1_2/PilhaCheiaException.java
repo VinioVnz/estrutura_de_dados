@@ -1,4 +1,4 @@
-package UNI1.aula5.exercicio;
+package UNI1.aula5.exercicio1_2;
 public class PilhaCheiaException extends RuntimeException {
 
     public PilhaCheiaException() {

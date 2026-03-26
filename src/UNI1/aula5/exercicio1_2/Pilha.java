@@ -1,4 +1,4 @@
-package UNI1.aula5.exercicio;
+package UNI1.aula5.exercicio1_2;
 
 public interface Pilha <T>{
     public void push(T info);

@@ -1,4 +1,4 @@
-package UNI1.aula5.exercicio;
+package UNI1.aula5.exercicio1_2;
 
 public class PilhaVetor<T> implements Pilha {
     private Object[] info;
@@ -52,35 +52,39 @@ public class PilhaVetor<T> implements Pilha {
         tamanho = 0;
     }
 
+    @Override
     public String toString() {
         String frase = "";
-        for (int i = 0; i <= tamanho; i++) {
+
+        for (int i = tamanho - 1; i >= 0; i--) {
             frase += info[i];
-            if (i != tamanho) {
+            if (i != 0) {
                 frase += ",";
             }
         }
+
         return frase;
     }
-   public void concatenar(PilhaVetor<T> p) {
-    // verifica capacidade
-    if (this.tamanho + p.tamanho > this.limite) {
-        throw new PilhaCheiaException("Sem capacidade para concatenar");
+
+    public void concatenar(PilhaVetor<T> p) {
+        // verifica capacidade
+        if (this.tamanho + p.tamanho > this.limite) {
+            throw new PilhaCheiaException("Sem capacidade para concatenar");
+        }
+
+        PilhaVetor<T> aux = new PilhaVetor<>(p.limite);
+
+        while (!p.estaVazia()) {
+            aux.push((T) p.pop());
+        }
+
+        while (!aux.estaVazia()) {
+            T valor = (T) aux.pop();
+            p.push(valor);
+            this.push(valor);
+        }
     }
 
-    PilhaVetor<T> aux = new PilhaVetor<>(p.limite);
-
-    while (!p.estaVazia()) {
-        aux.push((T) p.pop());
-    }
-
-
-    while (!aux.estaVazia()) {
-        T valor = aux.pop();
-        p.push(valor);    
-        this.push(valor);  
-    }
-}
     public Object getInfo() {
         return info;
     }
